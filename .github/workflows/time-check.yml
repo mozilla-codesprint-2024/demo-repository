@@ -1,0 +1,18 @@
+name: Prevent Pushes After 2 PM
+
+on:
+  push:
+
+jobs:
+  check_time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the time
+        run: |
+          current_time=$(date -u +%H%M)
+          if [ "$current_time" -gt "1252" ]; then
+            echo "It is after 1:52 PM UTC. Pushes are not allowed."
+            exit 1
+          else
+            echo "It is before 12:52 PM UTC. Push allowed."
+          fi
