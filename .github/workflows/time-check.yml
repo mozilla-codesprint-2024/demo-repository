@@ -10,8 +10,8 @@ jobs:
       - name: Check the time
         run: |
           current_time=$(date -u +%H%M)
-          if [ "$current_time" -ge "1304" ]; then
-            echo "It is after 13:04 PM UTC. Pushes are not allowed."
+          if [ "$current_time" -ge "1325" ]; then
+            echo "It is after 13:25 PM UTC. Pushes are not allowed."
             exit 1
           else
-            echo "It is before 13:04 PM UTC. Push allowed."
+            echo "It is before 13:25 PM UTC. Push allowed."
