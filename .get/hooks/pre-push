@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get the current time in 24-hour format
+current_time=$(date +"%H")
+
+# Check if the current time is after 2 PM (14:00)
+if [ "$current_time" -ge "14" ]; then
+  echo "Push is not allowed after 2 PM."
+  exit 1
+fi
+
+# If the check passes, allow the push to proceed
+exit 0
